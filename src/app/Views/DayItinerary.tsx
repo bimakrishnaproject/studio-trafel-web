@@ -65,9 +65,13 @@ export default function DayItinerary({
                     <img
                       loading="lazy"
                       src={el.image.asset.url}
-                      className={`w-full h-auto object-cover transition-transform duration-500 ease-in-out rounded-t-lg rounded-b-lg transform ${
+                      className={`w-full h-auto object-cover transition-transform duration-500 ease-in-out transform ${
                         el.show ? "translate-x-[-100%]" : "translate-x-0"
                       }`}
+                      style={{
+                        borderTopLeftRadius: "0.5rem",
+                        borderBottomLeftRadius: "0.5rem",
+                      }}
                     />
                   </div>
 
