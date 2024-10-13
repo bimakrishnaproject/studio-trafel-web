@@ -122,17 +122,11 @@ export interface TravelHighlightData {
 export interface FaqData {
   ask: string;
   answer: string;
-  show?: boolean; // Untuk toggle expand/collapse
-}
-
-interface FaqItem {
-  ask: string;
-  answer: string;
   show: boolean;
 }
 
 export interface FaqProps {
-  data: FaqItem[];
+  data: FaqData[];
   toggleExpandAll: () => void;
   toggleShowFaq: (index: number) => void;
 }

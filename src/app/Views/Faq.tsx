@@ -14,7 +14,7 @@ export default function Faq({
           className="text-5xl font-bold text-center md:text-left"
           style={{ fontSize: "clamp(22px, 5vw, 48px)" }}
         >
-          Frequently asked questions
+          Frequently Asked Questions
         </h1>
         <div className="flex justify-end items-end mt-8">
           <div
@@ -32,7 +32,7 @@ export default function Faq({
           </div>
         </div>
         <div className="mt-14 pb-12">
-          {data?.map((content, indexContent: number) => {
+          {data.map((content, indexContent) => {
             return (
               <div
                 className="mb-2 cursor-pointer"
@@ -51,7 +51,7 @@ export default function Faq({
                       content.show ? "text-white" : "text-[#414141]"
                     }`}
                   >
-                    {content?.ask}
+                    {content.ask}
                   </p>
                   <div className="bg-gray-200 w-12 h-12 flex items-center justify-center rounded-full">
                     {content.show ? (
@@ -68,7 +68,7 @@ export default function Faq({
                       : "border-white max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-2xl">{content?.answer}</p>
+                  <p className="text-2xl">{content.answer}</p>
                 </div>
               </div>
             );
