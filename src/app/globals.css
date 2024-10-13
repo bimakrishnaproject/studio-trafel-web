@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&display=swap");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,11 +19,121 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif Pro", serif;
+  color: #414141;
+}
+
+p {
+  font-family: "Noto Sans";
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.default-padding {
+  padding: 50px; /* Ganti dengan padding yang diinginkan untuk perangkat mobile */
+}
+
+.dynamic-padding {
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-top: 50px;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+.title-align {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .show-on-mobile {
+    display: flex;
+  }
+
+  .title-align {
+    text-align: center;
+  }
+
+  .dynamic-width {
+    width: 100%;
+  }
+
+  .show {
+    transform: translateX(0) !important; /* Pastikan teks tidak bergeser */
+  }
+
+  .mobile-padding {
+    padding: 16px; /* Ganti dengan padding yang diinginkan */
+  }
+  .default-padding {
+    padding: 20px; /* Ganti dengan padding yang diinginkan untuk perangkat mobile */
+  }
+
+  .dynamic-padding {
+    padding: 15px; /* Padding lebih kecil untuk perangkat mobile */
+    margin-top: 10px; /* Margin lebih kecil untuk perangkat mobile */
+  }
+
+  .margin-top-on-mobile {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 769px) {
+  .dynamic-width {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1900px) {
+  .dynamic-padding {
+    padding-right: 300px;
+    padding-left: 300px;
+    margin-top: 50px;
+  }
+}
+
+@keyframes expand {
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    max-height: 10000px; /* Sesuaikan dengan kebutuhan */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes collapse {
+  0% {
+    max-height: 10000px; /* Sesuaikan dengan kebutuhan */
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
   }
 }
