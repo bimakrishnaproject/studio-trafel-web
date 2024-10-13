@@ -35,13 +35,13 @@ export default function DayItinerary({
             onClick={toggleExpandAll}
           >
             <p className="text-xl font-bold mr-2">
-              {data.every((item: any) => item.show)
+              {data.every((item) => item.show)
                 ? "Collapse all days"
                 : "Expand all days"}
             </p>
             <ChevronDownIcon
               className={`w-8 h-8 transition-transform duration-300 ease-in-out ${
-                data.every((item: any) => item.show) ? "rotate-180" : ""
+                data.every((item) => item.show) ? "rotate-180" : ""
               }`}
             />
           </div>
