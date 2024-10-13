@@ -90,7 +90,7 @@ export default function DayItinerary({
                       {el?.moreInfo?.slice(0, 2)?.map((el, i) => {
                         return (
                           <>
-                            <div>
+                            <div key={i}>
                               <IconSwitcher title={el?.title} size={25} />
                             </div>
                             <p className="ml-4 mr-4">{el?.title}</p>

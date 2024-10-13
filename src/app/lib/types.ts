@@ -124,3 +124,15 @@ export interface FaqData {
   answer: string;
   show?: boolean; // Untuk toggle expand/collapse
 }
+
+interface FaqItem {
+  ask: string;
+  answer: string;
+  show: boolean;
+}
+
+export interface FaqProps {
+  data: FaqItem[];
+  toggleExpandAll: () => void;
+  toggleShowFaq: (index: number) => void;
+}

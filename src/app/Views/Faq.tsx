@@ -1,7 +1,12 @@
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { FaqProps } from "../lib/types";
 
-export default function Faq({ data, toggleExpandAll, toggleShowFaq }: any) {
+export default function Faq({
+  data,
+  toggleExpandAll,
+  toggleShowFaq,
+}: FaqProps) {
   return (
     <div className="dynamic-padding">
       <div className="mt-20">
@@ -17,19 +22,17 @@ export default function Faq({ data, toggleExpandAll, toggleShowFaq }: any) {
             onClick={toggleExpandAll}
           >
             <p className="text-xl font-bold mr-2">
-              {data.every((item: any) => item.show)
-                ? "Collapse All"
-                : "Expand All"}
+              {data.every((item) => item.show) ? "Collapse All" : "Expand All"}
             </p>
             <ChevronDownIcon
               className={`w-8 h-8 transition-transform duration-300 ease-in-out ${
-                data.every((item: any) => item.show) ? "rotate-180" : ""
+                data.every((item) => item.show) ? "rotate-180" : ""
               }`}
             />
           </div>
         </div>
         <div className="mt-14 pb-12">
-          {data?.map((content: any, indexContent: number) => {
+          {data?.map((content, indexContent: number) => {
             return (
               <div
                 className="mb-2 cursor-pointer"
